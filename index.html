@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Gravitas+One&family=Momo+Signature&family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Playwrite+DE+SAS:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Stack+Sans+Text:wght@200..700&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>CCY Store</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="textHeader">CCY Store</h1>
+        <i class="bi bi-list" id="menu-icon"></i>
+        <ul class="menu" id="menu">
+            <li><a href="#">COMPRAS</a></li>
+            <li><a href="#endereco">ENDEREÇO</a></li>
+            <li><a href="#contato">CONTATO</a></li>
+            <li><a href="#">INSTAGRAM</a></li>
+            <button class="btnCar"><i class="bi bi-cart-check" id="iconeCar"></i> Carrinho <span id="contadorCarrinho" class="badge" style="display:none;">0</span></button>
+            
+        </ul>
+    </header>
+        <div class="inputPesquisa" id="inputPesquisa">
+            <input type="text" placeholder="Pesquisar">
+            <i class="bi bi-search" id="iconePes"></i>
+        </div>
+
+    <h1 class="text">Nossos <span>produtos</span><i class="bi bi-arrow-down"></i></h1>
+    <section class="container" id="produtos">
+        <div class="box">
+            <img src="images/imgShop1.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize <br>Muslim Energy</p>
+            <p class="pValor">R$ 89,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="box">
+            <img src="images/imgShop2.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize <br>Muslim Energy</p>
+            <p class="pValor">R$ 69,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="box">
+            <img src="images/imgShop3.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize Preta</p>
+            <p class="pValor">R$ 49,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="box">
+            <img src="images/imgShop4.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize 1UP</p>
+            <p class="pValor">R$ 99,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+    </section>
+    <section class="hero">
+        <div class="mid">
+            <img src="images/imgShop4.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize 1UP</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop3.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize Preta</p>
+            <p class="pValor">R$ 89,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop2.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize <br>Muslim Energy</p>
+            <p class="pValor">R$ 79,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop1.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize <br>Muslim Energy</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+    </section>
+    <section class="hero">
+        <div class="mid">
+            <img src="images/imgShop5.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Simple black</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop6.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Tampang preman</p>
+            <p class="pValor">R$ 89,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop7.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize Countries</p>
+            <p class="pValor">R$ 79,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop8.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Simple white</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+    </section>
+    <section class="hero">
+        <div class="mid">
+            <img src="images/imgShop5.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Simple black</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop6.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Tampang preman</p>
+            <p class="pValor">R$ 89,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop7.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize Countries</p>
+            <p class="pValor">R$ 79,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop8.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Simple white</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+    </section>
+    <section class="hero">
+        <div class="mid">
+            <img src="images/imgShop5.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Simple black</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop6.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Tampang preman</p>
+            <p class="pValor">R$ 89,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop7.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize Countries</p>
+            <p class="pValor">R$ 79,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop8.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Simple white</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+    </section>
+    <section class="hero">
+        <div class="mid">
+            <img src="images/imgShop5.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Simple black</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop6.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Tampang preman</p>
+            <p class="pValor">R$ 89,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop7.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize Countries</p>
+            <p class="pValor">R$ 79,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop8.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Aleluia</p>
+            <p class="pValor">R$ 89,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+    </section>
+    <section class="hero">
+        <div class="mid">
+            <img src="images/imgShop5.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Simple black</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop6.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Tampang preman</p>
+            <p class="pValor">R$ 89,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop7.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Jesus Saves Branca</p>
+            <p class="pValor">R$ 79,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop8.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Jesus Saves Preta</p>
+            <p class="pValor">R$ 79,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+    </section>
+    <section class="hero">
+        <div class="mid">
+            <img src="images/imgShop4.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize 1UP</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop3.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize Preta</p>
+            <p class="pValor">R$ 89,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop2.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize <br>Muslim Energy</p>
+            <p class="pValor">R$ 79,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop1.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize <br>Muslim Energy</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">Comprar <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+    </section>
+    <section class="hero">
+        <div class="mid">
+            <img src="images/imgShop4.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize 1UP</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop3.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize Preta</p>
+            <p class="pValor">R$ 89,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop2.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize <br>Muslim Energy</p>
+            <p class="pValor">R$ 79,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">COMPRAR <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+        <div class="mid">
+            <img src="images/imgShop1.jpg" alt="" class="imgShop">
+            <p class="pBox">Camiseta Oversize <br>Muslim Energy</p>
+            <p class="pValor">R$ 109,90</p>
+            <button class="btnTamanho">VER TAMANHOS <i class="bi bi-star" id="iconeTamanho"></i></button>
+            <button class="btnBuy">Comprar <i class="bi bi-arrow-right" id="iconeBuy"></i></button>
+            <button class="btnCart" id="carrinho">ADD CARRINHO <i class="bi bi-cart" id="iconeCart"></i></button>
+        </div>
+    </section>
+    <h2 class="textContato" id="contato">Fale conosco <br><i class="bi bi-whatsapp" id="iconeWats"></i> (43) 98484-8484</h2>
+
+    <div class="mensagemSucesso"></div>
+    <p id="avisoTamanho" class="avisoTamanho"></p>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <p class="rights">
+            © 2026 Todos os direitos reservados a <strong>CCYeshua Store.</strong>
+          </p>
+      
+          <div class="social">
+            <a href="#" target="_blank">
+              @ccyeshuastore
+            </a>
+            <a href="#" target="_blank">
+              @comunidadecatolicayeshua
+            </a>
+          </div>
+      
+          <p class="address" id="endereco">
+            <i class="bi bi-geo-alt"></i> Rua Gralha Azul, 388 - Londrina PR
+          </p>
+        </div>
+
+        <button id="btnAdm" class="btnAdm">Admin</button>
+      </footer>
+      <div class="modalAdm" id="modalAdm">
+        <div class="modalAdmConteudo">
+          <span class="fecharAdm">&times;</span>
+          <h2>Login Admin</h2>
+          <input type="text" id="usuarioAdm" placeholder="Usuário">
+          <div class="senhaWrapper" style="position:relative;">
+            <input type="password" id="senhaAdm" placeholder="Senha">
+            <i id="toggleSenhaAdm" class="bi bi-eye" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;"></i>
+          </div>
+          <button id="entrarAdm">Entrar</button>
+        </div>
+      </div>
+      
+      
+      
+      
+    <script src="script.js"></script>
+</body>
+
+</html>
